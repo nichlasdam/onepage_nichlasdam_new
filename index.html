@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="">
+        <title>TEST ONEPAGE #1</title>
+        <link rel="stylesheet" type="text/css" href="examples/examples.css" />
+        <link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>   
+        <script type="text/javascript" src="vendors/jquery.slimscroll.min.js"></script>
+        <script type="text/javascript" src="jquery.fullPage.js"></script>
+        <script src="vendors/jquery.easings.min.js"></script>
+        <script type="text/javascript" src="jquery.scroll.js"></script>
+        <script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+                anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+                menu: '#menu',
+                
+                onLeave: function(index, nextIndex, direction){
+                    var div = $(".menu");
+                    if(index =='1' && direction =='down') {
+                        $('.logo').removeClass('logo').addClass('darklogo')
+                        div.removeClass('menu').addClass("darkmenu");
+                    } else {
+                        $('.logo').removeClass('darklogo').addClass('logo')
+                        div.removeClass("darkmenu").addClass('menu');
+                    }
+                    
+                    var div = $(".darkmenu");
+                    if(index =='2' && direction =='up') {
+                        $('.darklogo').removeClass('darklogo').addClass('logo')
+                        div.removeClass('darkmenu').addClass("menu");
+                    } else {
+                        $('.darklogo').removeClass('logo').addClass('darklogo')
+                        div.removeClass("menu").addClass('darkmenu');
+                    }
+                }
+			});
+		});
+	</script>
+    </head>
+
+    <body>
+        
+        <div id="wrapper">
+            <header>
+                
+                <div class="logo">
+
+                </div>
+                <div class="menu">
+                    <ul id="menu">
+                        <li data-menuanchor="firstPage" class="active"><a href=#firstPage>First Section</a></li>
+                        <li data-menuanchor="secondPage"><a href="#secondPage">Second section</a></li>
+                        <li data-menuanchor="3rdPage"><a href="#3rdPage">Third Section</a></li>
+                        <li data-menuanchor="4thpage"><a href="#4thpage">Fourth section</a></li>
+                        <li data-menuanchor="lastPage"><a href="#lastPage">Fitfth section</a></li>
+                    </ul>
+                </div>
+            </header>
+
+            <div id="fullpage">
+               <div class="section active" id="section0">
+                    <div class="slide" id="slide1">
+                        <div class="slide_text">
+                            <h2>Slide 1 test</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla                         
+                                it amet augue eget blandit. Praesent sit amet ipsum mauris. In    
+                                it amet augue eget blandit. Praesent sit amet ipsum mauris. In    
+                            </p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide_text">
+                            <h2>Slide 1 test</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla                         
+                                it amet augue eget blandit. Praesent sit amet ipsum mauris. In    
+                                it amet augue eget blandit. Praesent sit amet ipsum mauris. In    
+                            </p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide_text">
+                            <h2>Slide 1 test</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla                         
+                                it amet augue eget blandit. Praesent sit amet ipsum mauris. In    
+                                it amet augue eget blandit. Praesent sit amet ipsum mauris. In    
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                   <div class="section" id="section1">Some section</div>
+                   <div class="section" id="section2">Some section</div>
+                   <div class="section" id="section3">Some section</div>
+                    <div class="section" id="section4">Some section</div>
+            </div>
+     </div>
+    </body>
+</html>
